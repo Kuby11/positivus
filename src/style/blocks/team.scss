@@ -1,0 +1,95 @@
+@use '../helpers/' as *;
+
+.team{
+	--columns: 3;
+	display: flex;
+	flex-direction: column;
+	gap: rem(35);
+	&__list{
+		display: grid;
+		grid-template-columns: repeat(var(--columns), 1fr);
+		gap: rem(40);
+		@include laptop{
+			--columns: 2;
+		}
+		@include mobile{
+			--columns: 1;
+		}
+	}
+	&__item{
+		width: auto;
+		min-height: rem(330);
+		padding: rem(35) rem(40);
+		border-radius: var(--border-radius-large);
+		border: var(--border);
+		box-shadow: var(--box-shadow);
+		@include mobile{
+			padding: rem(30) rem(35);
+		}
+		@include mobile-s{
+			padding: rem(25) rem(25);
+		}
+	}
+	&__card{
+		display: flex;
+		flex-direction: column;
+		&-header{
+			display: flex;
+		}
+		&-info{
+			display: flex;
+			flex-direction: column;
+			justify-content: end;
+		}
+		&-image{
+			margin-right: rem(20);
+			@include mobile{
+				max-width: 30%;
+				max-height: 30%;
+			}
+			@include mobile{
+				margin-right: rem(10);
+			}
+		}
+		&-name{
+			@include mobile-s{
+				font-size: rem(16);
+			}
+		}
+		&-post{
+			@include mobile-s{
+				font-size: rem(14);
+			}
+		}
+		&-link{
+			--size: #{rem(34)};
+			display: flex;
+			justify-content: end;
+			flex: 1;
+			height: 100%;
+			img{
+				max-width: var(--size);
+				max-height: var(--size);
+			}
+			@include tablet{
+				--size: #{rem(30)}
+			}
+			@include mobile{
+				--size: #{rem(26)}
+			}
+		}
+		&-description{
+			padding-top: rem(28);
+			margin-top: rem(28);
+			border-top: var(--border);
+		}
+	}
+	&__button{
+		align-self: end;
+		min-width: rem(269);
+		@include mobile{
+			align-self: center;
+			width: 100%;
+		}
+	}
+}

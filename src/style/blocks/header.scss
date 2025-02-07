@@ -1,0 +1,14 @@
+@use '../helpers/' as *;
+
+.header{
+	padding-top: rem(60);
+	position: relative;
+
+  @include laptop {
+    padding-top: rem(30);
+  }
+
+  @include mobile {
+    padding-top: rem(15);
+  }
+}

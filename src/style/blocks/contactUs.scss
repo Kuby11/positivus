@@ -1,0 +1,27 @@
+@use '../helpers/' as *;
+
+.contact-us{
+	background-color: var(--color-light);
+	padding: rem(60) rem(100) rem(80);
+	border-radius: var(--border-radius-large);
+	position: relative;
+	@include tablet{
+		padding: rem(40) rem(70) rem(60);
+	}
+	@include mobile{
+		padding: rem(40);
+	}
+	&__body{
+		display: flex;
+		justify-content: space-between;
+	}
+	&__image{
+		position: absolute;
+		top: 50%;
+		left: 100%;
+		translate: -50% -50%;
+		@include tablet{
+			width: 80%;
+		}
+	}
+}

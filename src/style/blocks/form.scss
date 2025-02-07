@@ -1,0 +1,105 @@
+@use '../helpers/' as *;
+
+.form{
+	min-width: rem(556);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: rem(40);
+	@include laptop{
+		min-width: rem(430);
+	}
+	@include tablet{
+		min-width: rem(340);
+		gap: rem(36);
+	}
+	@include mobile{
+    min-width: 100%;
+  }
+	&__body{
+		width: 100%;
+	}
+	&__radios{
+		display: flex;
+		gap: rem(35);
+		&-item{
+			display: flex;
+			align-items: center;
+			gap: rem(14);
+		}
+		&-input{
+			@include flex-center;
+			min-width: rem(28);
+			min-height: rem(28);
+			appearance: none;
+			border: var(--border);
+			border-radius: 50%;
+			background-color: var(--white);
+			cursor: pointer;
+			&::before{
+				content: "";
+				display: none;
+				@include square(rem(16));
+        border-radius: 50%;
+        background-color: var(--color-accent);
+        transition: var(--transition);
+			}
+			&[checked]::before{
+				display: block;
+			}
+		}
+		&-label{
+      @include mobile{
+				font-size: rem(14);
+			}
+    }
+	}
+	&__input-list{
+		display: flex;
+		flex-direction: column;
+		gap: rem(25);
+	}
+	&__input-item{
+		display: flex;
+		gap: rem(5);
+		flex-direction: column;
+	}
+	&__input{
+		--padding-x: #{rem(30)};
+
+		@include flex-center;
+
+		position: relative;
+		border: var(--border);
+		background-color: var(--white);
+		border-radius: var(--border-radius);
+		padding-inline: var(--padding-x);
+		height: rem(59);
+		transition: var(--transition);
+
+		
+		&--big{
+			height: rem(190);
+			padding-block: rem(18);
+			resize: none;
+			align-items: start;
+			
+			@include mobile {
+				height: rem(132);
+			}
+			&::placeholder{
+				position: absolute;
+				left: 0;
+				top: 0;
+				padding: var(--padding-x);
+			}
+		}
+		@include mobile{
+			--padding-x: #{rem(20)}
+		}
+		&:focus {
+      border-color: var(--color-accent);
+      outline: none;
+    }
+	}
+}

@@ -1,0 +1,12 @@
+@use '../helpers/' as *;
+
+.puddle{
+	height: rem(51);
+	padding: 0 rem(7);
+	background-color: var(--color-accent);
+	border-radius: var(--border-radius-small);
+	@include flex-center;
+	&--white{
+		background-color: var(--white);
+	}
+}

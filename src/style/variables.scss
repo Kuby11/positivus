@@ -1,0 +1,43 @@
+@use './helpers/' as *;
+
+:root{
+	--white: rgb(255, 255, 255);
+	--black: rgb(0, 0, 0);
+
+	--color-light: #F3F3F3;
+	--color-dark: #191A23;
+  --color-dark-gray: #292A32;
+	--color-accent: #B9FF66;
+
+	--transition: 300ms;
+
+	--border: #{rem(1)} solid var(--color-dark);
+  --border-radius: #{rem(14)};
+  --border-radius-small: #{rem(7)};
+  --border-radius-large: #{rem(45)};
+
+	--font-family-base: 'Space Grotesk', sans-serif;
+
+  --box-shadow: 0 #{rem(5)} var(--color-dark);
+  --box-shadow-right: #{rem(5)} #{rem(5)} var(--color-dark);
+
+	--regular: 400;
+	--medium: 500;
+	--bold: 700;
+
+  --container-width: #{rem(1240)};
+  --container-padding-x: #{rem(20)};
+
+  --section-padding-y: #{rem(70)};
+
+  --input-height: #{rem(59)};
+  --button-height: #{rem(68)};
+
+	@include laptop {
+    --section-padding-y: #{rem(50)};
+  }
+
+  @include mobile {
+    --section-padding-y: #{rem(30)};
+  }
+}

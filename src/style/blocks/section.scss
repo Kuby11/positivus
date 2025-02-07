@@ -1,0 +1,32 @@
+@use '../helpers/' as *;
+
+.section{
+	padding-top: var(--section-padding-y);
+	padding-bottom: rem(10);
+	overflow-x: hidden;
+	&__header{
+		display: flex;
+			align-items: center;
+			justify-content: start;
+			gap: rem(40);
+		padding-bottom: rem(80);
+		@include mobile{
+			flex-direction: column;
+				text-align: center;
+				gap: rem(30);
+		}
+	}
+	&__body{
+		display: flex;
+		flex-direction: column;
+		gap: rem(110);
+	}
+	&__title{
+		@include tablet{
+			height: auto !important;
+		}
+	}
+	&__description{
+		max-width: rem(580);
+	}
+}

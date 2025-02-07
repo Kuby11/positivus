@@ -1,0 +1,134 @@
+@use '../helpers/' as *;
+
+.services {
+	--cols: 2;
+	display: grid;
+	grid-template-columns: repeat(var(--cols), 1fr);
+	gap: rem(40);
+	@include tablet{
+		--cols: 1;
+	}
+	&__card{
+		padding: rem(50);
+		border: var(--border);
+		display: flex;
+			align-items: center;
+			justify-content: space-between;
+		border-radius: var(--border-radius-large);
+		box-shadow: var(--box-shadow);
+		@include laptop{
+			padding: rem(25);
+		}
+		@include mobile{
+			display: grid;
+				grid-template-columns: auto auto;
+				row-gap: rem(27);
+		}
+		&--accent{
+			background-color: var(--color-accent);
+		}
+		&--gray{
+			background-color: var(--color-light);
+		}
+		&--black{
+			background-color: var(--color-dark);
+		}
+		&-content{
+			height: 100%;
+			display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				gap: rem(93);
+			@include mobile{
+				display: contents;
+			}
+		}
+		&-title{
+			display: flex;
+				flex-direction: column;
+				align-items: start;
+			@include laptop{
+				h3{
+					height: 70%;
+				}
+			}
+			@include mobile{
+				grid-column: -1 / 1;
+			}
+		}
+		&-image{
+			@include laptop{
+				max-width: 50%;
+			}
+			@include mobile{
+				max-width: rem(165);
+			}
+		}
+		&-link{
+			display: flex;
+				align-items: center;
+				justify-content: start;
+				gap: rem(17);
+			transition: var(--transition);
+			@include hover{
+				opacity: 0.7;
+			}
+			@include mobile{
+				align-self: end;
+			}
+		}
+		.link{
+			&__icon-wrapper{
+				@include flex-center;
+				@include square(rem(42));
+				svg{
+					fill: var(--color-accent);
+				}
+			}
+			&__label{
+				font-size: rem(20);
+				@include mobile{
+					@include visually-hidden;
+				}
+				&--white{
+          color: var(--white);
+        }
+			}
+		}
+	}
+}
+.services-banner{
+	position: relative;
+	width: 100%;
+	height: rem(347);
+	background-color: var(--color-light);
+	border-radius: var(--border-radius-large);
+	padding: rem(60);
+	margin-bottom: rem(60);
+
+	@include tablet {
+		padding: rem(50);
+	}
+
+	@include mobile {
+		padding: rem(40);
+		gap: rem(20);
+		height: auto;
+	}
+	display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: rem(20);
+	&__body{
+		display: flex;
+			flex-direction: column;
+			align-items: start;
+			gap: rem(26);
+			max-width: rem(500);
+	}
+	&__image{
+		@include tablet {
+			width: 40%;
+    }
+	}
+}

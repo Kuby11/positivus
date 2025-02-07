@@ -1,0 +1,26 @@
+@use './helpers/' as *;
+
+@use './reset.scss';
+@use './font.scss';
+@use './variables.scss';
+@use './utils.scss';
+@use './globals.scss';
+@use './normalize.scss';
+
+@use './blocks/header.scss';
+@use './blocks/button.scss';
+@use './blocks/burger.scss';
+@use './blocks/nav.scss';
+@use './blocks/logo.scss';
+@use './blocks/sidebar.scss';
+@use './blocks/section.scss';
+@use './blocks/hero.scss';
+@use './blocks/puddle.scss';
+@use './blocks/services.scss';
+@use './blocks/studies.scss';
+@use './blocks/process.scss';
+@use './blocks/team.scss';
+@use './blocks/reviews.scss';
+@use './blocks/contactUs.scss';
+@use './blocks/form.scss';
+@use './blocks/footer.scss';

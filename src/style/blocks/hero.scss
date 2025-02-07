@@ -1,0 +1,94 @@
+@use '../helpers/' as *;
+
+.hero{
+	display: flex;
+	justify-content: space-between;	
+	gap: var(--section-padding-y);
+
+	@include laptop {
+		gap: rem(60);
+	}
+	&__main{
+		display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: rem(30);
+
+    @include mobile {
+      flex-direction: column;
+    }
+	}
+	&__body{
+		display: flex;
+    flex-direction: column;
+    align-items: start;
+    max-width: rem(531);
+    gap: rem(35);
+
+    @include mobile {
+      display: contents;
+    }
+	}
+	&__title{
+		@include mobile {
+      margin-bottom: rem(10);
+    }
+	}
+	&__description{
+		font-size: rem(20);
+		line-height: 1.4;
+		@include mobile{
+			border-bottom: rem(40);
+			order: 2;
+		}
+	}
+	&__button{
+		@include mobile {
+      width: 100%;
+      max-width: rem(390);
+      margin-inline: auto;
+			order: 2;
+			margin-top: rem(40);
+    }
+	}
+	&__image{
+		@include tablet{
+			max-width: 40%;
+		}
+		@include mobile {
+      max-width: 100%;
+    }
+	}
+}
+
+.hero-partners{
+	padding-bottom: var(--section-padding-y);
+	&__list{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		@include tablet {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			row-gap: rem(20);
+		}
+		@include mobile{
+			grid-template-columns: repeat(2, 1fr)
+    }
+	}
+	&__item{
+		@include flex-center;
+		img{
+			transition: var(--transition);
+			filter: grayscale(1);
+			@include mobile-s{
+				width: rem(115);
+			}
+		}
+		@include hover{
+			img{
+				filter: grayscale(0);
+			}
+		}
+	}
+}

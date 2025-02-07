@@ -1,0 +1,60 @@
+@use '../helpers/' as *;
+
+.nav{
+	position: relative;
+	display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: rem(20);
+	&__list{
+		display: flex;
+		align-items: center;
+		gap: rem(40);
+		@include laptop{
+			gap: rem(30);
+		}
+		@include tablet{
+			gap: rem(20);
+		}
+	}
+	&__item{
+		display: inline-flex;
+		position: relative;
+		font-size: rem(20);
+		line-height: 140%;
+		color: var(--color-dark);
+		@include laptop{
+			font-size: rem(18);
+		}
+		@include tablet{
+			font-size: rem(16);
+		}
+  }
+	&__link{
+		@include hover {
+			&::after {
+				width: 100%;
+			}
+		}
+	
+		&::after {
+			content: '';
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			translate: -50%;
+			width: 0;
+			height: rem(2);
+			background-color: currentColor;
+			transition-duration: var(--transition);
+    }
+	}
+
+	&__button{
+		@include tablet {
+			height: rem(48);
+			padding-inline: rem(18);
+			font-size: rem(16);
+		}
+	}
+}
